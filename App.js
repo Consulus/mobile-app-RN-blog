@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { AppLoading } from "expo";
+import { AppNavigation } from "./src/navigation/AppNavigation";
 import { bootstrap } from "./src/bootstrap";
 
 export default function App() {
@@ -16,5 +17,5 @@ export default function App() {
     );
   }
 
-  return <View>Привет</View>;
+  return <AppNavigation />;
 }
