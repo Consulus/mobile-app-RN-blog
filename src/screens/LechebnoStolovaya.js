@@ -1,10 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export const BookmarkedScreen = ({}) => {
+export const LechebnoStolovaya = ({}) => {
   return (
     <View style={styles.center}>
-      <Text>Негазированная вода</Text>
+      <Text>Лечебно-столовая вода</Text>
     </View>
   );
 };

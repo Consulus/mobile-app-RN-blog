@@ -12,6 +12,7 @@ import { DATA } from "../data";
 import { THEME } from "../theme";
 import { Item, HeaderButtons } from "react-navigation-header-buttons";
 import { AppHeaderIcon } from "../components/AppHeaderIcon";
+import Tablet from "../components/Tablet";
 
 export const PostScreen = ({ navigation }) => {
   const postId = navigation.getParam("postId");
@@ -42,6 +43,7 @@ export const PostScreen = ({ navigation }) => {
       <View style={styles.textWrap}>
         <Text style={styles.title}>{post.text}</Text>
       </View>
+      <Tablet />
       <Button
         title="Удалить"
         color={THEME.DANGER_COLOR}

@@ -26,7 +26,7 @@ export const MainScreen = ({ navigation }) => {
 };
 
 MainScreen.navigationOptions = {
-  headerTitle: "Мой блог",
+  headerTitle: "Мой магазин",
   headerRight: (
     <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
       <Item

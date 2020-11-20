@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import { Platform } from "react-native";
 import { MainScreen } from "../screens/MainScreen";
 import { PostScreen } from "../screens/PostScreen";
+import { LechebnoStolovaya } from "../screens/LechebnoStolovaya";
 import { BookmarkedScreen } from "../screens/BookmarkedScreen";
 import { THEME } from "../theme";
 import { Ionicons } from "@expo/vector-icons";
@@ -31,6 +32,7 @@ const BookedNavigator = createStackNavigator(
   {
     Booked: BookmarkedScreen,
     Post: PostScreen,
+    Lechebnzya: LechebnoStolovaya,
   },
   {
     defaultNavigationOptions: {
@@ -44,20 +46,33 @@ const BookedNavigator = createStackNavigator(
 
 const BottomNavigator = createBottomTabNavigator(
   {
-    Post: {
-      screen: PostNavigator,
-      navigationOptions: {
-        tabBarIcon: (info) => (
-          <Ionicons name="ios-albums" size={25} color={info.tintColor} />
-        ),
-      },
-    },
     Booked: {
       screen: BookedNavigator,
       navigationOptions: {
         tabBarIcon: (info) => (
-          <Ionicons name="ios-star" size={25} color={info.tintColor} />
+          <Ionicons name="ios-water" size={24} color="blue" />
         ),
+        title: "Не газированная",
+      },
+    },
+    Post: {
+      screen: PostNavigator,
+
+      navigationOptions: {
+        tabBarIcon: (info) => (
+          <Ionicons name="ios-water" size={24} color="red" />
+        ),
+        title: "Газированная",
+      },
+    },
+
+    LechebnoStolovaya: {
+      screen: LechebnoStolovaya,
+      navigationOptions: {
+        tabBarIcon: (info) => (
+          <Ionicons name="ios-water" size={24} color="green" />
+        ),
+        title: "Лечебно-столовая",
       },
     },
   },
