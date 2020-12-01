@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View, Button, FlatList } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import { useDispatch, useSelector } from "react-redux";
 import { Post } from "../components/Post";
-import { DATA } from "../data";
 import { AppHeaderIcon } from "../components/AppHeaderIcon";
+import { loadPosts } from "../store/actions/post";
 
 export const MainScreen = ({ navigation }) => {
   const openPostHadler = (post) => {
@@ -14,10 +15,18 @@ export const MainScreen = ({ navigation }) => {
     });
   };
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadPosts());
+  }, [dispatch]);
+
+  const allPosts = useSelector((state) => state.post.allPosts);
+
   return (
     <View style={styles.center}>
       <FlatList
-        data={DATA}
+        data={allPosts}
         keyExtractor={(post) => post.id.toString()}
         renderItem={({ item }) => <Post post={item} onOpen={openPostHadler} />}
       />
